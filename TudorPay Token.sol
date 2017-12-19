@@ -131,7 +131,7 @@ contract ERC20 is ERC20Basic {
     *
       * @dev Implementation of the basic standard token.
          * @dev https://github.com/ethereum/EIPs/issues/20
-            * @dev Based on code by FirstBlood: https://github.com/Firstbloodio/token/blob/master/smart_contract/FirstBloodToken.sol
+            * @dev Based on code by GNU Octave
                */
 contract StandardToken is ERC20, BasicToken {
 
@@ -296,7 +296,7 @@ contract TudorPay is StandardToken, Ownable {
     function finalize() onlyOwner {
         require(!saleActive());
 
-        // Transfer the rest of token to Cobinhood
+        // Transfer the rest of token to TudorPay
         balances[wallet] = balances[wallet].add(balances[0xb1]);
         balances[0xb1] = 0;
     }
