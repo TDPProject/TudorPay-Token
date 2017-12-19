@@ -190,6 +190,9 @@ contract StandardToken is ERC20, BasicToken {
 contract TudorPay is StandardToken, Ownable {
     using SafeMath for uint256;
 
+import {SafeMATH} from "./SafeMATH.sol";
+import {ERC223} from "./[TDX]ERC223.sol";
+
     // Token Info.
     string  public constant name = "TudorPay Token";
     string  public constant symbol = "TDX";
